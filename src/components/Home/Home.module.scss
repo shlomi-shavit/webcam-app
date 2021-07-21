@@ -1,0 +1,68 @@
+
+.page_wrapper {
+    max-width: 500px;
+    margin: auto;
+    height: 100%;
+
+    //@media (max-width:760px) {
+    //    width: 90%;
+    //    margin: auto;
+    //}
+
+    .logo {
+        text-align: center;
+        margin: 13px 0 0 0;
+        font-weight: 900;
+        font-style: italic;
+    }
+
+    h2 {
+        margin: 25px;
+        text-align: center;
+    }
+
+    .workout {
+        color: #fff;
+        display: block;
+        width: calc(100% - 20px);
+        height: calc(30% - 20px);
+        margin: 10px auto;
+        padding: 15px;
+        box-sizing: border-box;
+        background-size: cover;
+        background-position: top;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 25px;
+        font-weight: 800;
+
+        &_time{
+            font-size: 12px;
+            font-weight: initial;
+            width: 60px;
+            padding: 4px;
+            background: #000;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            &__symbol{
+                height: 10px;
+                width: 10px;
+                border-radius: 10px;
+                border: solid 1px #fff;
+            }
+        }
+    }
+}
+
+.Cardio {
+    background-image: url('../../images/Cardio.png');
+}
+.Strength {
+    background-image: url('../../images/Strength.png');
+}
+.Flexability {
+    background-image: url('../../images/Flexability.png');
+}

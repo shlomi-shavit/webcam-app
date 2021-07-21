@@ -1,0 +1,74 @@
+
+.timer_wrapper {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  background: #26272c;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 5px;
+
+  .pie {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background: #bfbfbf;
+    border: 6px solid #26272c;
+    box-sizing: border-box;
+    transform-origin: 100% 50%;
+  }
+
+  .spinner {
+    border-radius: 125px 0 0 125px;
+    z-index: 200;
+    border-right: none;
+    animation-name: rota;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .filler {
+    border-radius: 0 125px 125px 0;
+    z-index: 100;
+    border-left: none;
+    left: 50%;
+    opacity: 0;
+    animation-name: fill;
+    animation-timing-function: steps(1, end);
+    animation-iteration-count: infinite;
+  }
+
+  .mask {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    z-index: 300;
+    opacity: 1;
+    background: inherit;
+    animation-name: mask;
+    animation-timing-function: steps(1, end);
+    animation-iteration-count: infinite;
+  }
+}
+
+.timer_wrapper, .timer_wrapper * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+@keyframes rota {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fill {
+  0%        { opacity: 0; }
+  50%, 100% { opacity: 1; }
+}
+
+@keyframes mask {
+  0%        { opacity: 1; }
+  50%, 100% { opacity: 0; }
+} 

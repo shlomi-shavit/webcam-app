@@ -1,0 +1,29 @@
+.graph_container {
+    width: 97%;
+    position: fixed;
+    height: 110px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    overflow: scroll;
+
+    .bars_wrapper{
+        width: auto;
+        position: absolute;
+        bottom: 10px;
+        display: flex;
+        align-items: flex-end;
+
+        .bar {
+            margin: 2px;
+            width: 17px;
+            border-radius: 8.5px;
+            background: #fff;
+        }
+        .full {
+            background: rgb(255,255,0);
+            background: linear-gradient(176deg, rgba(255,255,0,1) 0%, rgba(170,254,0,1) 100%);
+        }
+    }
+}
