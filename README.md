@@ -1,4 +1,4 @@
 # webcam-app
 
-In terminal run 'npm install'
+In terminal run 'npm install'  
 And then 'npm start'
