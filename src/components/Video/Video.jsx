@@ -47,8 +47,11 @@ function Video() {
         <div>
             <div className={classes.video_container}>
                 <video
+                    poster="https://i.gifer.com/PYBr.gif"
                     muted
                     autoPlay
+                    height={500}
+                    width={320}
                     ref={videoElement}
                     className={classes.video}
                 ></video>

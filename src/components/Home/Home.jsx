@@ -26,7 +26,7 @@ const Home = () => {
             <Link key={data.title} className={`${classes.workout} ${classes[data.title]}`} to={data.url}>
                 <div className={classes.workout_time}>
                     <div className={classes.workout_time__symbol}></div>
-                    {data.time}
+                    {data.time} min
                 </div>
                 {data.title}
             </Link>

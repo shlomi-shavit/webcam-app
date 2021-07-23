@@ -1,7 +1,7 @@
 .graph_container {
     width: 97%;
     position: fixed;
-    height: 110px;
+    height: 130px;
     bottom: 0;
     right: 0;
     left: 0;
@@ -14,6 +14,7 @@
         bottom: 10px;
         display: flex;
         align-items: flex-end;
+        padding-right: 20px;
 
         .bar {
             margin: 2px;

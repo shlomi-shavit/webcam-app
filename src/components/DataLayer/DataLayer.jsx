@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import classes from './DataLayer.module.scss';
 import Timer from '../Timer/Timer';
 import VolumGraph from '../VolumeGraph/VolumeGraph';
+import Score from '../Score/Score';
 
-const Score = ({timer}) => {
+const DataLayer = ({timer}) => {
+
+    const [seconds, setSeconds] = useState(0);
+    const [score, setScore] = useState(0);
 
     const animationDuration = timer/1000;
     let ScoreOfMoveArr = [];
@@ -13,15 +17,21 @@ const Score = ({timer}) => {
         if(ScoreOfMoveArr.indexOf(randomNum) === -1) ScoreOfMoveArr.push(randomNum);
     }
 
-    // todo: score component -> ScoreOfMoveArr as prop -> loop with setInterval
-    
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setSeconds(seconds => seconds + 1 );
+            setScore(ScoreOfMoveArr[seconds]);
+        }, 1000);
+        return () => clearInterval(interval);
+    }, [seconds]);
+
     return (
         <div className={classes.data_layer}>
-            <div className={classes.score}>85</div>
+            <Score score={score} />
             <Timer timer={animationDuration}/>
-            <VolumGraph ScoreOfMoveArr={ScoreOfMoveArr}/>
+            <VolumGraph seconds={seconds} ScoreOfMoveArr={ScoreOfMoveArr}/>
         </div>
     );
 }
 
-export default Score;
+export default DataLayer;
